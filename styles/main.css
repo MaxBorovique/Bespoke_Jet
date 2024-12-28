@@ -27,3 +27,10 @@
   src: url(../fonts/samsung-sharp-sans-bold.woff) format(woff);
   font-weight: 700;
 }
+
+
+:root {
+  --c-white: #fff;
+  --c-black: #000000;
+
+}
