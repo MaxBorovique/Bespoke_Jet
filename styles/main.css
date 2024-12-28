@@ -1,0 +1,29 @@
+@font-face {
+  font-family: 'Samsung One Regular';
+  src: url(../fonts/samsung-one-regular.woff) format(woff);
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Samsung One Bold';
+  src: url(../fonts/samsung-one-bold.woff) format(woff);
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Samsung Sharp Sans Regular';
+  src: url(../fonts/samsung-sharp-sans.woff) format(woff);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Samsung Sharp Sans Medium';
+  src: url(../fonts/samsung-sharp-sans-medium.woff) format(woff);
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Samsung Sharp Sans Bold';
+  src: url(../fonts/samsung-sharp-sans-bold.woff) format(woff);
+  font-weight: 700;
+}
