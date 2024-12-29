@@ -80,7 +80,7 @@ body {
 .banner__main-text {
   font-family: var(--font-bold);
   font-size: var(--font-size-md);
-  line-height: 1.3;
+  line-height: normal;
 }
 
 .banner__main-text-line {
@@ -149,18 +149,23 @@ body {
   object-fit: cover;
 }
 
+
+
+
 .banner__slider-text {
   position: absolute;
   left: 50px;
   bottom: 250px;
   z-index: 1;
   opacity: 0;
+  line-height: 1.2;
+  
 }
 
-.slider__text {
-  font-size: var(--font-size-sm);
+.slider__text-content {
   width: 40%;
-
+  font-size: var(--font-size-sm);
+  font-family: var(--font-medium);
 }
 
 .slider__text-button {
