@@ -78,6 +78,24 @@ const nextSlide = () => {
   sliderState.currentSlideIndex =
     (sliderState.currentSlideIndex + 1) % SLIDER_LENGTH;
   updateSlider();
+
+  gsap.fromTo(
+    '.slider__text-content',
+    { x: 100, opacity: 0 },
+    { x: 0, opacity: 1, duration: 1, ease: "power1.out" }
+  );
+
+  gsap.fromTo(
+    ".slider__text-button",
+    { x: 100, opacity: 0 },
+    { x: 0, opacity: 1, duration: 1, ease: "power1.out" }
+  );
+
+  gsap.fromTo(
+    ".slider__image",
+    { opacity: 0 },
+    { opacity: 1, duration: 1, ease: "power1.out" }
+  );
 };
 
 const prevSlide = () => {
@@ -246,7 +264,7 @@ gsap.to('.banner__slider-text', {
   delay: 3,
 });
 
-gsap.to(sliderConfig.selectors.counter, {
+gsap.to('.slider__navigation', {
   opacity: 1,
   duration: 1,
   delay: 3,

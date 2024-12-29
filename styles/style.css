@@ -17,7 +17,6 @@ body {
 .banner__container {
   position: relative;
   display: flex;
-  align-items: center;
   border: var(--border-style);
   width: 95%;
   height: 95%;
@@ -76,7 +75,6 @@ body {
   top: 150px;
   left: 0;
 }
-
 .banner__main-text {
   font-family: var(--font-bold);
   font-size: var(--font-size-md);
@@ -89,6 +87,8 @@ body {
 
 .banner__main-text-logo {
   max-width: 220px;
+  height: 1em;
+  
 }
 
 /* #endregion */
@@ -155,7 +155,7 @@ body {
 .banner__slider-text {
   position: absolute;
   left: 50px;
-  bottom: 250px;
+  bottom: 200px;
   z-index: 1;
   opacity: 0;
   line-height: 1.2;
@@ -164,8 +164,9 @@ body {
 
 .slider__text-content {
   width: 40%;
-  font-size: var(--font-size-sm);
-  font-family: var(--font-medium);
+  font-size: var(--font-size-xs);
+  line-height: 1.2;
+
 }
 
 .slider__text-button {
@@ -180,8 +181,10 @@ body {
 .slider__navigation {
   position: absolute;
   left: 50px;
-  bottom: 180px;
+  bottom: 150px;
   display: flex;
+  justify-content: center;
+  align-items: center;
   z-index: 1;
   opacity: 0;
 }
