@@ -30,8 +30,30 @@
 
 
 :root {
+
+  /* fonts  variables*/
+  --font-main: 'Samsung Sharp Sans Regular';
+  --font-bold: 'Samsung Sharp Sans Bold';
+  --font-medium: 'Samsung Sharp Sans Medium';
+  --font-alt: 'Samsung One Regular';
+
+  /* font size variables */
+
+  --font-size-xl: 80px;
+  --font-size-lg: 50px; 
+  --font-size-md: 40px; 
+  --font-size-sm: 24px; 
+  --font-size-xs: 16px; 
+  --font-size-xxs: 10px; 
+  --font-size-xxxs: 6px; 
+
+    /* color variales */
+  
   --c-white: #fff;
   --c-black: #000000;
   --c-grey: #808080;
+
+  /* other varibles */
+  --border-style: 4px solid var(--c-black);
 
 }

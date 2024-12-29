@@ -1,13 +1,7 @@
-
-/* #region: Main part */
-
-/* #endregion */
-
-
-/* #region:  Page Settings */
+/* #region: Page Settings */
 body {
   background: url(../assets/background.png) center/cover no-repeat;
-  font-family: "Samsung Sharp Sans Regular";
+  font-family: var(--font-main);
 }
 /* #endregion: Main Page Background */
 
@@ -25,9 +19,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 4px solid var(--c-black);
-  width: 100%;
-  height: 100%;
+  border: var(--border-style);
+  width: 95%;
+  height: 95%;
   max-height: 1200px;
   max-width: 1600px;
   overflow: hidden;
@@ -52,7 +46,7 @@ body {
 }
 
 .banner__button {
-  font-family: 'Samsung One Regular';
+  font-family: var(--font-alt);
   font-size: 40px;
   position: absolute;
   bottom: 50px;
@@ -61,7 +55,7 @@ body {
   padding: 10px 40px;
   text-transform: uppercase;
   background-color: inherit;
-  border: 4px solid var(--c-black);
+  border: var(--border-style);
   color: var(--c-black);
   cursor: pointer;
   opacity: 0;
@@ -70,11 +64,11 @@ body {
 }
 
 .banner__trademark {
-  font-family: 'Samsung Sharp Sans Medium';
+  font-family: var(--font-medium);
   position: absolute;
   top: 50px;
   right: 50px;
-  font-size: 50px;
+  font-size: var(--font-size-lg);
   color: var(--c-white);
 }
 
@@ -85,8 +79,8 @@ body {
 }
 
 .banner__main-text {
-  font-family: 'Samsung Sharp Sans Bold';
-  font-size: 40px;
+  font-family: var(--font-bold);
+  font-size: var(--font-size-md);
 }
 
 .banner__main-text-line {
@@ -108,15 +102,14 @@ body {
 
 .banner__special-offer-product {
   display: inline-block;
-  font-family: 'Samsung Sharp Sans Regular';
-  font-size: 80px;
+  font-size: var(--font-size-xl);
   color: var(--c-white);
   text-transform: uppercase;
 }
 
 .banner__special-offer-price {
   display: inline-block;
-  font-family: 'Samsung Sharp Sans Bold';
+  font-family: var(--font-bold);
   font-size: 45px;
   color: var(--c-white)
 }
@@ -125,7 +118,6 @@ body {
   position: absolute;
   bottom: 15px;
   left: 0;
-  font-family: 'Samsung Sharp Sans Regular';
   color: var(--c-grey);
 }
 /* #endregion */
@@ -166,15 +158,13 @@ body {
 }
 
 .slider__text {
-  font-family: 'Samsung Sharp Sans Regular';
-  font-size: 24px;
+  font-size: var(--font-size-sm);
   width: 40%;
 
 }
 
 .slider__text-button {
-  font-family: 'Samsung Sharp Sans Regular';
-  font-size: 24px;
+  font-size: var(--font-size-sm);
   padding: 0;
   color: var(--c-grey);
   background: transparent;
@@ -192,14 +182,13 @@ body {
 }
 
 .slider__navigation-page {
-  font-family: 'Samsung Sharp Sans Bold';
+  font-family: var(--font-bold);
   margin-inline: 10px;
   color: var(--c-black);
 }
 
 .slider__navigation-prev,
 .slider__navigation-next {
-  font-family: 'Samsung Sharp Sans Regular';
   font-size: 36px;
   padding: 0;
   background: transparent;
@@ -209,4 +198,108 @@ body {
 }
 
 
+/* #endregion */
+
+/* #region: Responsive */
+@media (max-width: 1400px) {
+  .banner__main-text {
+    font-size: 30px;
+  }
+  .banner__main-text-logo {
+    width: 130px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .banner__logo {
+    width: 150px;
+  }
+  .banner__trademark {
+    font-size: 36px;
+  }
+  .banner__main-text {
+    font-size: var(--font-size-sm);
+  }
+  .banner__main-text-logo{
+    width: 100px;
+  }
+}
+
+@media (max-width: 992px) {
+  .banner__slider-text,
+  .slider__navigation,
+  .banner__button {
+    left: 35px;
+  }
+  .slider__text, 
+  .slider__text-button {
+    font-size: var(--font-size-xs);
+  }
+  .banner__button {
+    font-size: var(--font-size-sm);
+  }
+  .banner__note {
+    font-size: var(--font-size-xxs);
+  }
+  .banner__special-offer-product {
+    font-size: var(--font-size-lg);
+  }
+  .banner__special-offer-price {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .banner__logo {
+    width: 100px;
+  }
+  .banner__trademark {
+    font-size: var(--font-size-xs);
+  }
+  .banner__main-text {
+    font-size: 14px;
+  }
+  .banner__main-text-logo {
+    width: 70px;
+  }
+  .banner__slider-text,
+  .slider__navigation,
+  .banner__button {
+    left: 28px;
+  }
+  .slider__text,
+  .slider__text-button {
+    font-size: 14px;
+  }
+  .banner__button {
+    font-size: var(--font-size-xs);
+  }
+  .banner__note {
+    font-size: var(--font-size-xxs);
+  }
+  .banner__special-offer-product {
+    font-size: 30px;
+  }
+  .banner__special-offer-price {
+    font-size: var(--font-size-xs);
+  }
+}
+
+@media (max-width: 576px) {
+  .banner__trademark {
+    font-size: var(--font-size-xxs);
+  }
+  .slider__text,
+  .slider__text-button {
+    font-size: var(--font-size-xxs);
+  }
+  .banner__button {
+    font-size: var(--font-size-xxs);
+    border: 2px solid var(--c-black);
+    left: 28px;
+  }
+  .banner__note {
+    font-size: var(--font-size-xxxs);
+  }
+}
 /* #endregion */
