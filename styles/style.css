@@ -17,7 +17,6 @@ body {
 .banner__container {
   position: relative;
   display: flex;
-  justify-content: center;
   align-items: center;
   border: var(--border-style);
   width: 95%;

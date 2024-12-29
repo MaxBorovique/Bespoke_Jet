@@ -72,6 +72,8 @@ const SLIDER_LENGTH = sliderConfig.slides.length;
   const nextSlide = () => {
     sliderState.currentSlideIndex = (sliderState.currentSlideIndex + 1) % SLIDER_LENGTH; 
     updateSlider();
+
+
   };
 
   const prevSlide = () => {
@@ -115,6 +117,50 @@ const SLIDER_LENGTH = sliderConfig.slides.length;
 
   initializeSlider();
 // #endregion
-// #region: Data for slider
+
+// #region: Animations
+
+const bannerLogoTL = gsap.timeline({ defaults: { duration: 1.5 } });
+
+// Samsung logo animation
+bannerLogoTL
+  .from('.banner__logo', {
+    x: -300,
+  })
+  .to('.banner__logo', {
+    y: -100,
+  });
+
+
+// Permanent elements animations
+
+gsap.from('.banner__special-offer-product', {
+  x: -300,
+  duration: 1.5,
+});
+
+gsap.from('.banner__special-offer-price', {
+  x: -300,
+  duration: 1.5,
+});
+
+gsap.from('.banner__main-text-line', {
+  x: -600,
+  duration: 1.5,
+  stagger: 0.5,
+  delay: 1,
+});
+
+gsap.to('.banner__main-image', {
+  width: '0',
+  duration: 1,
+  delay: 3,
+});
+
+gsap.to('.banner__white-space', {
+  width: '55%', 
+  delay: 3,
+  duration: 1,
+});
 
 // #endregion
