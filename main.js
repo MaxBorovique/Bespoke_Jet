@@ -23,11 +23,12 @@ const sliderConfig = {
     },
   ],
   selectors: {
-    image: ".slider__image",
-    text: ".slider__text",
+    image: '.slider__image',
+    text: '.slider__text',
     counter: ".slider__navigation-page",
-    prevButton: ".slider__navigation-prev",
-    nextButton: ".slider__navigation-next",
+    prevButton: '.slider__navigation-prev',
+    nextButton: '.slider__navigation-next',
+    bannerButton: '.banner__button',
   },
 };
 // #endregion
@@ -39,6 +40,7 @@ const elements = {
   counter: document.querySelector(sliderConfig.selectors.counter),
   prevButton: document.querySelector(sliderConfig.selectors.prevButton),
   nextButton: document.querySelector(sliderConfig.selectors.nextButton),
+  bannerButton: document.querySelector(sliderConfig.selectors.bannerButton),
 }
 // #endregion
 
@@ -48,6 +50,7 @@ const sliderState = {
   interval: null,
 };
 
+let buttonBreath = null;
 const SLIDER_LENGTH = sliderConfig.slides.length;
 
 // #endregion
@@ -120,6 +123,16 @@ const SLIDER_LENGTH = sliderConfig.slides.length;
 
 // #region: Animations
 
+const buttonBreathingAnimation = () => {
+  buttonBreath = gsap.to('.banner__button', {
+    repeat: -1,
+    yoyo: true,
+    scale: 1.1,
+    duration: 1.5,
+    ease: 'power1.inOut',
+  })
+}
+
 const bannerLogoTL = gsap.timeline({ defaults: { duration: 1.5 } });
 
 // Samsung logo animation
@@ -132,7 +145,21 @@ bannerLogoTL
   });
 
 
-// Permanent elements animations
+// #region EventListeners
+elements.bannerButton.addEventListener('mouseenter', () => {
+  buttonBreath.pause();
+  gsap.to(sliderConfig.selectors.bannerButton, {
+    scale: 1.1,
+    duration: .5,
+  })
+});
+
+elements.bannerButton.addEventListener('mouseleave', () => {
+  buttonBreath.resume();
+});
+// #endregion
+
+  // Permanent elements animations
 
 gsap.from('.banner__special-offer-product', {
   x: -300,
@@ -197,5 +224,13 @@ noteTL.to('.banner__note', {
   delay: 1,
 });
 
+// breath button animation
 
+gsap.to(sliderConfig.selectors.bannerButton, {
+  display: 'block', 
+  opacity: 1,
+  duration: 1,
+  delay: 3,
+  onComplete: () => buttonBreathingAnimation(),
+})
 // #endregion
