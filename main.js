@@ -145,7 +145,7 @@ gsap.from('.banner__special-offer-price', {
 });
 
 gsap.from('.banner__main-text-line', {
-  x: -600,
+  x: -1000,
   duration: 1.5,
   stagger: 0.5,
   delay: 1,
@@ -162,5 +162,40 @@ gsap.to('.banner__white-space', {
   delay: 3,
   duration: 1,
 });
+
+// Slider animations
+
+gsap.to('.banner__slider-image', {
+  width: '45%',
+  delay: 3,
+  duration: 1,
+});
+
+gsap.to('.banner__special-offer-product', {
+  display: 'none',
+  duration: 0.1,
+  delay: 3, 
+});
+
+gsap.to('.banner__special-offer-price', {
+  display: 'none',
+  duration: 0.1,
+  delay: 3,
+});
+
+// Note animation
+const noteTL = gsap.timeline({defaults: {opacity: 1}});
+
+noteTL.to('.banner__note', {
+  opacity: 0,
+  delay: 3,
+  duration: 0.5,
+})
+.to('.banner__note', {
+  opacity: 1,
+  duration: 1,
+  delay: 1,
+});
+
 
 // #endregion

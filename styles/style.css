@@ -80,6 +80,7 @@ body {
 .banner__main-text {
   font-family: var(--font-bold);
   font-size: var(--font-size-md);
+  line-height: 1.3;
 }
 
 .banner__main-text-line {
