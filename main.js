@@ -42,11 +42,13 @@ const elements = {
 }
 // #endregion
 
-// #region: Slider state
+// #region: Slider state and constants
 const sliderState = {
   currentSlideIndex: 0,
   interval: null,
-}
+};
+
+const SLIDER_LENGTH = sliderConfig.slides.length;
 
 // #endregion
 
@@ -63,11 +65,55 @@ const sliderState = {
     }
 
     if(elements.counter) {
-      elements.counter.textContent = `${sliderState.currentSlideIndex + 1} / ${sliderConfig.slides.length}`;
+      elements.counter.textContent = `${sliderState.currentSlideIndex + 1} / ${SLIDER_LENGTH}`;
     }
   };
 
-  
+  const nextSlide = () => {
+    sliderState.currentSlideIndex = (sliderState.currentSlideIndex + 1) % SLIDER_LENGTH; 
+    updateSlider();
+  };
+
+  const prevSlide = () => {
+    sliderState.currentSlideIndex = (sliderState.currentSlideIndex - 1 + SLIDER_LENGTH ) % SLIDER_LENGTH;
+    updateSlider();
+  };
+
+  const autoPlayStart = (delay = 5000) => {
+    autoPlayStop();
+    sliderState.interval = setInterval(nextSlide, delay);
+  };
+
+  const autoPlayStop = () => {
+    if(sliderState.interval) {
+      clearInterval(sliderState.interval);
+      sliderState.interval = null;
+    }
+  };
+
+  const sliderNavigation = () => {
+    if(elements.prevButton) {
+      elements.prevButton.addEventListener('click', () => {
+        autoPlayStop();
+        prevSlide();
+      })
+    }
+
+    if(elements.nextButton) {
+      elements.nextButton.addEventListener('click', () => {
+        autoPlayStop();
+        nextSlide();
+      })
+    }
+  }
+
+  const initializeSlider = () => {
+    updateSlider();
+    sliderNavigation();
+    autoPlayStart();
+  };
+
+  initializeSlider();
 // #endregion
 // #region: Data for slider
 
