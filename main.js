@@ -155,8 +155,6 @@ const arrowButtonAnimation = (className) => (
   })
 )
 
-
-
 const buttonBreathingAnimation = () => {
   if (elements.bannerButton) {
     buttonBreath = gsap.to(".banner__button", {
@@ -216,12 +214,12 @@ gsap.from(".banner__main-text-line", {
 gsap.to(".banner__main-image", {
   width: "0",
   duration: 1,
-  delay: 3,
+  delay: 4,
 });
 
 gsap.to(".banner__white-space", {
   width: "55%",
-  delay: 3,
+  delay: 4,
   duration: 1,
 });
 
@@ -229,7 +227,7 @@ gsap.to(".banner__white-space", {
 
 gsap.to(".banner__slider-image", {
   width: "45%",
-  delay: 3,
+  delay: 4,
   duration: 1,
 });
 
@@ -237,14 +235,14 @@ gsap.to(".banner__special-offer-product", {
   opacity: 0,
   visibility: 'hidden',
   duration: 0.1,
-  delay: 3,
+  delay: 4,
 });
 
 gsap.to(".banner__special-offer-price", {
   opacity: 0,
   visibility: 'hidden',
   duration: 0.1,
-  delay: 3,
+  delay: 4,
 });
 
 // Note animation
@@ -253,7 +251,7 @@ const noteTL = gsap.timeline({ defaults: { opacity: 1 } });
 noteTL
   .to(".banner__note", {
     opacity: 0,
-    delay: 3,
+    delay: 4,
     duration: 0.5,
   })
   .to(".banner__note", {
@@ -262,20 +260,20 @@ noteTL
     delay: 1,
   });
 
-// breath premanent elements visibility
+// breath and premanent elements visibility
 
 gsap.to(sliderConfig.selectors.bannerButton, {
   display: "block",
   opacity: 1,
   duration: 1,
-  delay: 3,
+  delay: 4,
   onComplete: () => buttonBreathingAnimation(),
 });
 
 gsap.to('.banner__slider-text', {
   opacity: 1,
   duration: 1,
-  delay: 3,
+  delay: 5,
 });
 
 gsap.to('.slider__navigation', {

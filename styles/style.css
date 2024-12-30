@@ -92,8 +92,9 @@ body {
 .banner__trademark {
   font-family: var(--font-medium);
   position: absolute;
-  top: 30px;
+  top: 50px;
   right: 50px;
+  z-index: 5;
   font-size: clamp(var(--font-size-xxs), 2rem, var(--font-size-lg));
   color: var(--c-white);
 }
@@ -145,6 +146,7 @@ body {
 .banner__note {
   position: absolute;
   bottom: 15px;
+  font-size: var(--font-size-xs);
   left: 0;
   color: var(--c-grey);
 }
@@ -153,7 +155,7 @@ body {
 /* #region: Main layer */
 
 .banner__main-image {
-  background: url(../assets/main-image.png) center/cover no-repeat;
+  background: url(../assets/main-image.png) bottom/cover no-repeat;
   width: 100%;
   height: 100%;
 }
@@ -295,7 +297,7 @@ body {
     width: 100px;
   }
   .banner__trademark {
-    font-size: var(--font-size-xs);
+    font-size: var(--font-size-sm);
   }
   .banner__main-text {
     font-size: 14px;
@@ -330,7 +332,7 @@ body {
     aspect-ratio: 1/1;
   }
   .banner__trademark {
-    font-size: var(--font-size-xxs);
+    font-size: var(--font-size-xs);
   }
   .slider__text-content,
   .slider__text-button {
