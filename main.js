@@ -80,7 +80,7 @@ const nextSlide = () => {
   updateSlider();
 
   gsap.fromTo(
-    '.slider__text-content',
+    ".slider__text-content",
     { x: 100, opacity: 0 },
     { x: 0, opacity: 1, duration: 1, ease: "power1.out" }
   );
@@ -137,7 +137,9 @@ const sliderNavigation = () => {
 const initializeSlider = () => {
   updateSlider();
   sliderNavigation();
-  autoPlayStart();
+  setTimeout(() => {
+    autoPlayStart();
+  }, 5000)
 };
 
 initializeSlider();
@@ -145,15 +147,14 @@ initializeSlider();
 
 // #region: Animations
 
-const arrowButtonAnimation = (className) => (
-    gsap.to(className, {
+const arrowButtonAnimation = (className) =>
+  gsap.to(className, {
     scale: 0.5,
-    yoyo: true, 
+    yoyo: true,
     duration: 0.2,
     repeat: 1,
-    ease: 'power1.out',
-  })
-)
+    ease: "power1.out",
+  });
 
 const buttonBreathingAnimation = () => {
   if (elements.bannerButton) {
@@ -233,14 +234,14 @@ gsap.to(".banner__slider-image", {
 
 gsap.to(".banner__special-offer-product", {
   opacity: 0,
-  visibility: 'hidden',
+  visibility: "hidden",
   duration: 0.1,
   delay: 4,
 });
 
 gsap.to(".banner__special-offer-price", {
   opacity: 0,
-  visibility: 'hidden',
+  visibility: "hidden",
   duration: 0.1,
   delay: 4,
 });
@@ -270,15 +271,15 @@ gsap.to(sliderConfig.selectors.bannerButton, {
   onComplete: () => buttonBreathingAnimation(),
 });
 
-gsap.to('.banner__slider-text', {
+gsap.to(".banner__slider-text", {
   opacity: 1,
   duration: 1,
   delay: 5,
 });
 
-gsap.to('.slider__navigation', {
+gsap.to(".slider__navigation", {
   opacity: 1,
   duration: 1,
-  delay: 3,
+  delay: 4,
 });
 // #endregion

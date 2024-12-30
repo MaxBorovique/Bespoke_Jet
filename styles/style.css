@@ -6,7 +6,6 @@ body {
 /* #endregion: Main Page Background */
 
 /* #region: General styles */
-
 .banner {
   display: flex;
   justify-content: center;
@@ -25,12 +24,6 @@ body {
   overflow: hidden;
 }
 
-.newpage-link {
-  text-decoration: none;
-  color: inherit;
-}
-
-/* #endregion */
 .banner__top {
   display: flex;
   justify-content: space-between;
@@ -50,6 +43,13 @@ body {
   gap: 30px;
   margin-top: auto;
 }
+
+.newpage-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* #endregion */
 
 /* #region: Permanent elements */
 .banner__content {
