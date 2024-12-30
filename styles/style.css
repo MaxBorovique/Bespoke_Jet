@@ -66,18 +66,19 @@ body {
 
 .banner__logo {
   position: absolute;
+  width: clamp(100px, 150px, 275px);
   left: 0;
   top: 150px;
 }
 
 .banner__button {
   font-family: var(--font-alt);
-  font-size: 40px;
+  font-size: 2rem;
   position: absolute;
   bottom: 50px;
   left: 50px;
   z-index: 1;
-  padding: 10px 40px;
+  padding: 10px 20px;
   text-transform: uppercase;
   background-color: inherit;
   border: var(--border-style);
@@ -91,9 +92,9 @@ body {
 .banner__trademark {
   font-family: var(--font-medium);
   position: absolute;
-  top: 50px;
+  top: 30px;
   right: 50px;
-  font-size: var(--font-size-lg);
+  font-size: clamp(var(--font-size-xxs), 2rem, var(--font-size-lg));
   color: var(--c-white);
 }
 
@@ -205,7 +206,7 @@ body {
 
 .slider__navigation {
   position: absolute;
-  left: 50px;
+  left: 70px;
   bottom: 150px;
   display: flex;
   justify-content: center;
@@ -234,7 +235,9 @@ body {
 /* #endregion */
 
 /* #region: Responsive */
+
 @media (max-width: 1400px) {
+
   .banner__main-text {
     font-size: 30px;
   }
