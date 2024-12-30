@@ -119,6 +119,7 @@ const autoPlayStop = () => {
 const sliderNavigation = () => {
   if (elements.prevButton) {
     elements.prevButton.addEventListener("click", () => {
+      arrowButtonAnimation(sliderConfig.selectors.prevButton);
       autoPlayStop();
       prevSlide();
     });
@@ -126,6 +127,7 @@ const sliderNavigation = () => {
 
   if (elements.nextButton) {
     elements.nextButton.addEventListener("click", () => {
+      arrowButtonAnimation(sliderConfig.selectors.nextButton);
       autoPlayStop();
       nextSlide();
     });
@@ -142,6 +144,18 @@ initializeSlider();
 // #endregion
 
 // #region: Animations
+
+const arrowButtonAnimation = (className) => (
+    gsap.to(className, {
+    scale: 0.5,
+    yoyo: true, 
+    duration: 0.2,
+    repeat: 1,
+    ease: 'power1.out',
+  })
+)
+
+
 
 const buttonBreathingAnimation = () => {
   if (elements.bannerButton) {
