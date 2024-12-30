@@ -25,6 +25,11 @@ body {
   overflow: hidden;
 }
 
+.newpage-link {
+  text-decoration: none;
+  color: inherit;
+}
+
 /* #endregion */
 
 /* #region: Permanent elements */
